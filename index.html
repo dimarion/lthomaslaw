@@ -159,37 +159,37 @@
                         <form id="heroForm" onsubmit="handleFormSubmit(event)" class="space-y-4">
                             <div>
                                 <label class="block text-xs font-semibold text-slate-700 uppercase tracking-wider mb-1">Full Name</label>
-                                <input type="text" required placeholder="e.g. Jeanette Charles" class="w-full px-4 py-2.5 rounded-md border border-slate-300 focus:outline-none focus:ring-2 focus:ring-navy-900 text-sm">
+                                <input type="text" name="fullName" required placeholder="e.g. Jeanette Charles" class="w-full px-4 py-2.5 rounded-md border border-slate-300 focus:outline-none focus:ring-2 focus:ring-navy-900 text-sm">
                             </div>
                             <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
                                 <div>
                                     <label class="block text-xs font-semibold text-slate-700 uppercase tracking-wider mb-1">Contact Number</label>
-                                    <input type="tel" required placeholder="868-219-7964" class="w-full px-4 py-2.5 rounded-md border border-slate-300 focus:outline-none focus:ring-2 focus:ring-navy-900 text-sm">
+                                    <input type="tel" name="phoneNumber" required placeholder="868-219-7964" class="w-full px-4 py-2.5 rounded-md border border-slate-300 focus:outline-none focus:ring-2 focus:ring-navy-900 text-sm">
                                 </div>
                                 <div>
                                     <label class="block text-xs font-semibold text-slate-700 uppercase tracking-wider mb-1">Consultation Mode</label>
-                                    <select class="w-full px-4 py-2.5 rounded-md border border-slate-300 focus:outline-none focus:ring-2 focus:ring-navy-900 text-sm">
-                                        <option value="virtual">Virtual (Videoconference)</option>
-                                        <option value="office">Chambers (Woodbrook)</option>
-                                        <option value="phone">Telephone Consultation</option>
+                                    <select name="consultationMode" class="w-full px-4 py-2.5 rounded-md border border-slate-300 focus:outline-none focus:ring-2 focus:ring-navy-900 text-sm">
+                                        <option value="Virtual (Videoconference)">Virtual (Videoconference)</option>
+                                        <option value="Chambers (Woodbrook)">Chambers (Woodbrook)</option>
+                                        <option value="Telephone Consultation">Telephone Consultation</option>
                                     </select>
                                 </div>
                             </div>
                             <div>
                                 <label class="block text-xs font-semibold text-slate-700 uppercase tracking-wider mb-1">Nature of Matter</label>
-                                <select class="w-full px-4 py-2.5 rounded-md border border-slate-300 focus:outline-none focus:ring-2 focus:ring-navy-900 text-sm">
-                                    <option>Grant of Probate (Testate Estate)</option>
-                                    <option>Letters of Administration (Intestate Estate)</option>
-                                    <option>Resealing of Foreign Grant</option>
-                                    <option>Deed of Assent / Property Vesting</option>
-                                    <option>General Estate Administration / Advice</option>
+                                <select name="matterType" class="w-full px-4 py-2.5 rounded-md border border-slate-300 focus:outline-none focus:ring-2 focus:ring-navy-900 text-sm">
+                                    <option value="Grant of Probate (Testate Estate)">Grant of Probate (Testate Estate)</option>
+                                    <option value="Letters of Administration (Intestate Estate)">Letters of Administration (Intestate Estate)</option>
+                                    <option value="Resealing of Foreign Grant">Resealing of Foreign Grant</option>
+                                    <option value="Deed of Assent / Property Vesting">Deed of Assent / Property Vesting</option>
+                                    <option value="General Estate Administration / Advice">General Estate Administration / Advice</option>
                                 </select>
                             </div>
                             <div>
                                 <label class="block text-xs font-semibold text-slate-700 uppercase tracking-wider mb-1">Brief Description of Estate</label>
-                                <textarea rows="3" placeholder="Please indicate key assets (real property, financial accounts) and whether any beneficiaries reside abroad..." class="w-full px-4 py-2.5 rounded-md border border-slate-300 focus:outline-none focus:ring-2 focus:ring-navy-900 text-sm"></textarea>
+                                <textarea name="estateDescription" rows="3" placeholder="Please indicate key assets (real property, financial accounts) and whether any beneficiaries reside abroad..." class="w-full px-4 py-2.5 rounded-md border border-slate-300 focus:outline-none focus:ring-2 focus:ring-navy-900 text-sm"></textarea>
                             </div>
-                            <button type="submit" class="w-full bg-navy-900 hover:bg-navy-800 text-white font-semibold py-3.5 rounded-md transition shadow flex justify-center items-center gap-2">
+                            <button type="submit" id="heroSubmitBtn" class="w-full bg-navy-900 hover:bg-navy-800 text-white font-semibold py-3.5 rounded-md transition shadow flex justify-center items-center gap-2">
                                 <i data-lucide="send" class="w-4 h-4 text-gold-500"></i> Submit Consultation Request
                             </button>
                             <p class="text-[11px] text-slate-500 text-center leading-normal">
@@ -609,39 +609,39 @@
                 <h3 class="font-serif text-2xl font-bold text-navy-900">Consultation Appointment</h3>
                 <p class="text-xs text-slate-600 mt-1">Please select your preferred format and schedule with Victoriam Chambers.</p>
             </div>
-            <form onsubmit="handleModalSubmit(event)" class="space-y-4">
+            <form id="modalForm" onsubmit="handleModalSubmit(event)" class="space-y-4">
                 <div>
                     <label class="block text-xs font-semibold text-slate-700 uppercase tracking-wider mb-1">Full Name</label>
-                    <input type="text" required class="w-full px-4 py-2 rounded-md border border-slate-300 focus:outline-none focus:ring-2 focus:ring-navy-900 text-sm">
+                    <input type="text" name="fullName" required class="w-full px-4 py-2 rounded-md border border-slate-300 focus:outline-none focus:ring-2 focus:ring-navy-900 text-sm">
                 </div>
                 <div class="grid grid-cols-2 gap-4">
                     <div>
                         <label class="block text-xs font-semibold text-slate-700 uppercase tracking-wider mb-1">Contact Number</label>
-                        <input type="tel" required placeholder="868-219-7964" class="w-full px-4 py-2 rounded-md border border-slate-300 focus:outline-none focus:ring-2 focus:ring-navy-900 text-sm">
+                        <input type="tel" name="phoneNumber" required placeholder="868-219-7964" class="w-full px-4 py-2 rounded-md border border-slate-300 focus:outline-none focus:ring-2 focus:ring-navy-900 text-sm">
                     </div>
                     <div>
                         <label class="block text-xs font-semibold text-slate-700 uppercase tracking-wider mb-1">Mode of Consultation</label>
-                        <select class="w-full px-4 py-2 rounded-md border border-slate-300 focus:outline-none focus:ring-2 focus:ring-navy-900 text-sm">
-                            <option>Virtual (Videoconference)</option>
-                            <option>Chambers (No. 4 De Verteuil St, Woodbrook)</option>
+                        <select name="consultationMode" class="w-full px-4 py-2 rounded-md border border-slate-300 focus:outline-none focus:ring-2 focus:ring-navy-900 text-sm">
+                            <option value="Virtual (Videoconference)">Virtual (Videoconference)</option>
+                            <option value="Chambers (Woodbrook)">Chambers (No. 4 De Verteuil St, Woodbrook)</option>
                         </select>
                     </div>
                 </div>
                 <div>
                     <label class="block text-xs font-semibold text-slate-700 uppercase tracking-wider mb-1">Nature of Inquiry</label>
-                    <select class="w-full px-4 py-2 rounded-md border border-slate-300 focus:outline-none focus:ring-2 focus:ring-navy-900 text-sm">
-                        <option>Grant of Probate (Testate Estate)</option>
-                        <option>Letters of Administration (Intestate Estate)</option>
-                        <option>Deed of Assent / Property Conveyance</option>
-                        <option>Resealing of Foreign Grant</option>
-                        <option>Caveat / Contentious Probate Matter</option>
+                    <select name="matterType" class="w-full px-4 py-2 rounded-md border border-slate-300 focus:outline-none focus:ring-2 focus:ring-navy-900 text-sm">
+                        <option value="Grant of Probate (Testate Estate)">Grant of Probate (Testate Estate)</option>
+                        <option value="Letters of Administration (Intestate Estate)">Letters of Administration (Intestate Estate)</option>
+                        <option value="Deed of Assent / Property Conveyance">Deed of Assent / Property Conveyance</option>
+                        <option value="Resealing of Foreign Grant">Resealing of Foreign Grant</option>
+                        <option value="Caveat / Contentious Probate Matter">Caveat / Contentious Probate Matter</option>
                     </select>
                 </div>
                 <div>
                     <label class="block text-xs font-semibold text-slate-700 uppercase tracking-wider mb-1">Additional Information</label>
-                    <textarea rows="3" class="w-full px-4 py-2 rounded-md border border-slate-300 focus:outline-none focus:ring-2 focus:ring-navy-900 text-sm" placeholder="Please provide any relevant details regarding assets or proposed consultation times..."></textarea>
+                    <textarea name="additionalInfo" rows="3" class="w-full px-4 py-2 rounded-md border border-slate-300 focus:outline-none focus:ring-2 focus:ring-navy-900 text-sm" placeholder="Please provide any relevant details regarding assets or proposed consultation times..."></textarea>
                 </div>
-                <button type="submit" class="w-full bg-navy-900 hover:bg-navy-800 text-white font-medium py-3 rounded-md transition shadow flex justify-center items-center gap-2 text-sm">
+                <button type="submit" id="modalSubmitBtn" class="w-full bg-navy-900 hover:bg-navy-800 text-white font-medium py-3 rounded-md transition shadow flex justify-center items-center gap-2 text-sm">
                     <i data-lucide="calendar" class="w-4 h-4 text-gold-500"></i> Submit Appointment Request
                 </button>
             </form>
@@ -656,6 +656,10 @@
 
     <!-- Page Logic Script -->
     <script>
+        // FORMSPREE CONFIGURATION
+        // Replace 'YOUR_FORMSPREE_FORM_ID' with your actual Formspree ID (e.g., 'mvoegryp' or 'https://formspree.io/f/mvoegryp')
+        const FORMSPREE_ENDPOINT = "https://formspree.io/f/YOUR_FORMSPREE_FORM_ID";
+
         // Set dynamic copyright year
         document.getElementById('year').textContent = new Date().getFullYear();
 
@@ -766,20 +770,64 @@
             setTimeout(() => {
                 toast.classList.add('hidden');
                 toast.classList.remove('flex');
-            }, 5000);
+            }, 6000);
         }
 
-        function handleFormSubmit(e) {
-            e.preventDefault();
-            showToast("Your consultation request has been received. Chambers will contact you regarding appointment scheduling.");
-            e.target.reset();
+        async function submitToFormspree(formElement, submitButtonId) {
+            const btn = document.getElementById(submitButtonId);
+            const originalText = btn.innerHTML;
+            
+            // Show loading state
+            btn.disabled = true;
+            btn.innerHTML = `<span class="animate-pulse">Transmitting Request...</span>`;
+
+            try {
+                const formData = new FormData(formElement);
+                const response = await fetch(FORMSPREE_ENDPOINT, {
+                    method: 'POST',
+                    body: formData,
+                    headers: {
+                        'Accept': 'application/json'
+                    }
+                });
+
+                if (response.ok) {
+                    formElement.reset();
+                    return true;
+                } else {
+                    const data = await response.json();
+                    if (data && data.errors) {
+                        alert("Submission error: " + data.errors.map(error => error.message).join(", "));
+                    } else {
+                        alert("There was a problem submitting your request. Please try again or call Chambers directly.");
+                    }
+                    return false;
+                }
+            } catch (error) {
+                alert("Network error. Please check your connection or call Chambers directly.");
+                return false;
+            } finally {
+                btn.disabled = false;
+                btn.innerHTML = originalText;
+                lucide.createIcons();
+            }
         }
 
-        function handleModalSubmit(e) {
+        async function handleFormSubmit(e) {
             e.preventDefault();
-            closeBookingModal();
-            showToast("Your appointment request has been transmitted. Chambers will contact you to confirm the schedule.");
-            e.target.reset();
+            const success = await submitToFormspree(e.target, 'heroSubmitBtn');
+            if (success) {
+                showToast("Your consultation request has been received. Chambers will contact you regarding appointment scheduling.");
+            }
+        }
+
+        async function handleModalSubmit(e) {
+            e.preventDefault();
+            const success = await submitToFormspree(e.target, 'modalSubmitBtn');
+            if (success) {
+                closeBookingModal();
+                showToast("Your appointment request has been transmitted. Chambers will contact you to confirm the schedule.");
+            }
         }
     </script>
 </body>
